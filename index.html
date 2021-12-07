@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>Rock, Paper, Scissors Project</h1>
+    <p id="test"></p>
+
+    Type: Rock, Paper or Scissors! <br>
+    <input type="text" id="playerSelection">
+    <button id="Btn" onclick="playRound();">Submit</button>
+
+    <p id="Result"></p>
+    <p id="playerResult"></p>
+<script>
+
+/* Start of game()
+Function game() calls 2 other functions - Player and Computer */
+
+
+/* Step 1. Randomized Selection
+    The randomized generator picks based off the following:
+        Rock = 0,1,2,3
+        Paper = 4,5,6,7
+        Scissors = 8,9,10,11
+    This gives a 33.33% chance for each option to be selected.
+*/
+
+function computerfunction() {
+    let RandomNumber = Math.floor(Math.random() * 12);
+    return RandomNumber;
+}
+
+let computerSelection = computerfunction();
+console.log(computerSelection);
+
+// windows.update = function () {
+
+/* Step 2. Player input 
+    Player data is inputted and converted into a number
+    The number can be called via function playerfunction() 
+*/
+
+let playerInput = document.getElementById("playerSelection").value;
+let playerSelection = playerInput.length;
+console.log(playerSelection);
+
+// Add an eventlistener so that everytime player selects submit the input data is updated
+
+/* Step 3.  Single round of Rock Paper Scissors
+    Input the playerSelection
+    Input the computerSelection
+    Connect 2 inputs into 1 function
+    Determine which beats the other
+    Display result
+*/
+
+
+/* function computerfunction() {
+    let RandomNumber = Math.floor(Math.random() * 12);
+    if (RandomNumber <= 3) {
+        document.getElementById("Result").innerHTML = "Rock";
+        // return "Rock";
+    } else if (RandomNumber >= 8) { 
+        document.getElementById("Result").innerHTML = "Scissors";
+        // return "Scissors";
+    } else {
+        document.getElementById("Result").innerHTML = "Paper";
+        // return "Paper";
+    }
+}
+*/
+
+/*
+Game Legend:
+
+Player:4
+Computer:
+Ties = 0-3 (Rock vs Rock)
+Loses = 4-7 (Rock vs Paper)
+Wins = 8-11 (Rock vs Scissors)
+
+Player:5
+Computer:
+Wins = 0-3 (Paper vs Rock)
+Ties = 4-7 (Paper vs Paper)
+Loses = 8-11 (Paper vs Scissors)
+
+Player:6
+Computer:
+Loses = 0-3 (Scissors vs Rock)
+Wins = 4-7 (Scissors vs Rock)
+Ties = 8-11 (Scissors vs Scissors)
+
+*/
+
+// Step 3A. Take 2 outputs and combine into 1 function
+
+function playRound (playerSelection, computerSelection) {
+   if (playerSelection === 4 || computerSelection === [0,1,2,3]); {
+       document.getElementById("Result").innerHTML = "Rock ties Rock!";
+   } 
+   else if (playerselection === 5 || computerSelection === [4,5,6,7]); {
+       document.getElementById("Result").innerHTML = "Rock loses to Paper!"
+   }
+}
+console.log(playRound());
+
+/* 
+if (playerSelection > computerSelection) {
+    document.getElementById("result").innerHTML = Player wins!
+}
+
+
+/* function playRound(playerSelection, computerSelection) {
+    let playerSelection = document.getElementById("playerSelection").value;
+    document.getElementById("playertest").innerHTML = playerSelection
+}
+
+---
+if playerSelection = 
+
+
+Rock > Paper
+Rock < Scissors
+Rock = Rock
+
+Paper < Scissors
+Paper = Paper
+
+Scissors = Scissors
+
+*/
+
+</script>
+</body>
+</html> 
